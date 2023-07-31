@@ -1,4 +1,4 @@
-import LogoIcon from './components/svgs/logoIcon';
+import LogoIcon from './components/svgs/LogoIcon';
 import imgJovem from "./assets/jovem-img.png";
 import topBtn from "./assets/top.png";
 import PrecoPng from "./assets/checkco.png";
@@ -12,11 +12,12 @@ import teck2 from "./assets/teck2.png";
 import teck3 from "./assets/teck3.png";
 import teck4 from "./assets/teck4.png";
 
-import Empre from './components/svgs/verificados/empre';
-import Star from './components/svgs/verificados/star';
-import Veri from './components/svgs/verificados/veri';
+import Empre from './components/svgs/verificados/Empre';
+import Star from './components/svgs/verificados/Star';
+import Veri from './components/svgs/verificados/Veri';
 
 import MyComponent from './components/Typed';
+import BtnNavbar from './components/BtnNavbar';
 import ListaDePerguntas from './components/ListaDePerguntas';
 import Verificado from './components/svgs/Verificado';
 import ListaGarantia from './components/ListaGarantia';
@@ -25,7 +26,6 @@ import ListaDeVantagem from './components/ListaDeVantagem';
 import ListaDeLinks from './components/ListaDeLinks';
 
 import { Link } from "react-scroll";
-import BtnNavbar from './components/BtnNavbar';
 import { useState } from 'react';
 
 function App() {
