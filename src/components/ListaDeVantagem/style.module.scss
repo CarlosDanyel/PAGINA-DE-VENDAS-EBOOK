@@ -1,0 +1,40 @@
+.ListaDeBeneficio{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly   ;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5rem;
+
+    li{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: 800ms;
+        cursor: pointer;
+
+        &:hover{
+            transform: translateY(-20px);
+        }
+
+        .ListaText{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            .textInfo{
+                color: #191A15;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            p{
+                max-width: 340px;
+                color: #A6A6A6;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 30px;
+            }
+        }
+    }
+}
