@@ -12,8 +12,6 @@ import teck2 from "./assets/teck2.png";
 import teck3 from "./assets/teck3.png";
 import teck4 from "./assets/teck4.png";
 
-import Star from './components/svgs/verificados/Star';
-import Verif from './components/svgs/verificados/Verif';
 
 import MyComponent from './components/Typed';
 import BtnNavbar from './components/BtnNavbar';
@@ -27,6 +25,8 @@ import ListaDeLinks from './components/ListaDeLinks';
 import { Link } from "react-scroll";
 import { useState } from 'react';
 import Svg1Empre from './components/svgs/verificados/Svg1Empre';
+import SvgStar from './components/svgs/verificados/SvgStar';
+import SvgVEri from './components/svgs/verificados/SvgVEri';
 
 function App() {
 
@@ -73,8 +73,8 @@ function App() {
             </div>
             <div className={style.home_imgs}>
               <Svg1Empre className={style.svg1}/>
-              <Star className={style.svg2}/>
-              <Verif className={style.svg3}/>
+              <SvgStar className={style.svg2}/>
+              <SvgVEri className={style.svg3}/>
               <img className={style.home_imgs_cover} src={imgJovem} alt="Jovem no mercado de trabalho" />
             </div>
           </div>

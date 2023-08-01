@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
-const Star = (props) => {
+
+const SvgStar = (props) => {
     return (
         <svg className={props.className} width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="24.0415" width="56.8869" height="56.8869" rx="10.6663" transform="rotate(25 24.0415 0)" fill="#706FE5"/>
@@ -9,4 +10,4 @@ const Star = (props) => {
     );
 };
 
-export default Star;
+export default SvgStar;
