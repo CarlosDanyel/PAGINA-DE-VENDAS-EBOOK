@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const Empre = (props) => {
+const Svg1Empre = (props) => {
     return (
         <svg className={props.className} width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect y="40.2251" width="56.8869" height="56.8869" rx="10.6663" transform="rotate(-45 0 40.2251)" fill="#48B774"/>
@@ -9,4 +9,4 @@ const Empre = (props) => {
     );
 };
 
-export default Empre;
+export default Svg1Empre;
