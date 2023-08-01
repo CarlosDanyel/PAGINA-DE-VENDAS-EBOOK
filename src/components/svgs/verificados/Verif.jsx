@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-const Veri = (props) => {
+
+const Verif = (props) => {
     return (
         <svg className={props.className} width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="56.8869" height="56.8869" rx="10.6663" fill="#48B774"/>
@@ -8,4 +9,4 @@ const Veri = (props) => {
     );
 };
 
-export default Veri;
+export default Verif;
