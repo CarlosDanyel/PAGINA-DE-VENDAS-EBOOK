@@ -8,7 +8,7 @@ const BtnNavbar = ({ active, onClick }) => {
       type="button"
       title="Entra no MenuNavbar"
       onClick={onClick}
-      className={active ? `${style.menuNav} ${style.active}` : style.menuNav}
+      className={active ? `${style.hambuger} ${style.active}` : style.hambuger}
     >
       <span className={style.line}></span>
       <span className={style.line}></span>

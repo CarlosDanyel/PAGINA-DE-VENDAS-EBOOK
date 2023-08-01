@@ -1,13 +1,17 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-scroll";
 
-const ListaDeLinks = () => {
+import "../../styles/globals.module.scss";
+
+const ListaDeLinks = (props) => {
   const Lista = ["Home", "Vantagens", "Provas", "Sobre", "Perguntas"];
 
   return (
-    <ul>
+    <ul className={props.className}>
       {Lista.map((item, index) => (
         <li key={index}>
-          <Link 
+          <Link
+          onClick={props.reactive} 
           to={item} 
           smooth={true} 
           duration={800}>

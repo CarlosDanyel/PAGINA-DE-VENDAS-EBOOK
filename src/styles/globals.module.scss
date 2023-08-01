@@ -57,27 +57,41 @@ header{
             gap: 3rem;
             align-items: center;
 
-            ul{
+            .listNavbar {
                 display: flex;
-                gap: 68px;
-    
-                li{
-                    font-size: 16px;
-                    line-height: 28px;
-                    color: #1E1F4B;
-                    transition: 400ms;
-                    list-style: none;
-    
-                    &:hover{
-                        color: #706FE5;
-                        cursor: pointer;
+                align-items: center;
+                gap: 4rem;
+        
+                li {
+                    position: relative;
+                    cursor: pointer;
+        
+                    a{
+                        text-decoration: none;
+                        color: #1E1F4B;
                     }
-    
-                   
-                }
+        
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        transform: scaleX(0);
+                        height: 2px;
+                        bottom: -7px;
+                        left: 0;
+                        border-bottom: #48B774 4px dashed;
+                        transform-origin: bottom right;
+                        transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+                    }
+        
+                    &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }        
             }
-    
-            button{
+
+            .compraLink{
                 padding: 10px 40px;
                 border-radius: 12px;
                 border: none;
@@ -95,11 +109,11 @@ header{
             }
         }
 
-        .menuNav {
+        .hambuger {
             cursor: pointer;
             background: none;
             border: none;
-            width: 128px;
+            width: 35px;
             display: none;
             justify-content: center;
             align-items: flex-end;
@@ -127,14 +141,67 @@ header{
                 }
             }
         }
+
+        .navegacaoMenu {
+            padding: 5rem 0 0 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: -16rem;
+            width: 16rem;
+            height: 100vh ;
+            background: #fdfdfd;
+            z-index: 11;
+            transition:  400ms ease-out;
+
+            .listNavbar{
+                opacity: 1;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 5rem;
+                gap: 4.5rem;
+                transition: 400m;
+            }
+        }
+                                      
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0rem;
+            width: 16rem; 
+            height: 100vh;
+            z-index: 11;
+            transition:  400ms ease-out;
+            box-shadow: 0 8px 24px 0 rgb(0 0 0 / 15%);
+            
+            .hambuger {
+            
+                &.active {
+                    .line:nth-child(1) {
+                        opacity: 1;
+                        transform: translateY(8px) rotate(-45deg);
+                    }
+            
+                    .line:nth-child(2) {
+                        opacity: 1;
+                        transform: translateY(-8px) rotate(45deg);
+                        top: -3px;
+                    }
+                }
+            }
+        }
     }
     
     @media (max-width:1002px) {
-        button{
+        .compraLink{
             display: none;
         }
 
-        @media (max-width: 926px) {
+        @media (max-width: 1002px) {
            .menuLinks{
                 ul{
                     li{
@@ -142,7 +209,7 @@ header{
                     }
                 }
            }
-           .menuNav{
+           .hambuger{
                 display: flex !important;
            }
         }
@@ -219,7 +286,7 @@ main{
                 }
         
                 p{
-                    min-width: 100%;
+                    
                     padding-top: 3rem;
                     color: var(--second-color, #2E3E5C);
                     font-size: 20px;
@@ -279,7 +346,6 @@ main{
             }
 
             @media (max-width: 1318px) {
-                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -289,6 +355,10 @@ main{
                     display: none;
                 }
 
+                p{
+                    text-align: center;
+                }
+
                 @media  (max-width: 990px){
                     h1{
                         font-size: 55px !important;
@@ -296,6 +366,7 @@ main{
 
                     p{
                         font-size: 18px  !important;
+
                     }
                 }
 
@@ -351,6 +422,18 @@ main{
                     h1{
                         font-size: 25px !important;
                         line-height: 80px !important;
+                    }
+                }
+
+                @media  (max-width: 341px){
+                    h1{
+                        font-size: 20px !important;
+                        line-height: 80px !important;
+                    }
+
+                    p{
+                        font-size: 15px !important;
+                        padding-top: 1rem !important;
                     }
                 }
             }
@@ -800,16 +883,7 @@ footer{
     padding: 5rem 0 3rem 0;
     width: 100%;
     background: #706FE5;
-
-    .BtnTop{
-        position: absolute;
-        top: -1.5rem;
-        right: 3rem;
-        cursor: pointer;
-        background: none;
-        border: none;       
-    }
-
+    
     .display{
         @include display;
         display: flex;
@@ -857,12 +931,14 @@ footer{
 
             .LinkTextZap{
                 display: flex;
+                align-items: center;
                 gap: 1rem;
 
-                span{
+                a{
                     color: var(--colors-palette-secondary-100, #FFF6EF);
                     font-size: 15px;
                     font-weight: 400;
+                    cursor: pointer;
                 }
             }
         }

@@ -1,6 +1,5 @@
 import LogoIcon from './components/svgs/LogoIcon';
 import imgJovem from "./assets/jovem-img.png";
-import topBtn from "./assets/top.png";
 import PrecoPng from "./assets/checkco.png";
 import SlImg from "./assets/sl.png";
 
@@ -27,6 +26,8 @@ import { useState } from 'react';
 import Svg1Empre from './components/svgs/verificados/Svg1Empre';
 import SvgStar from './components/svgs/verificados/SvgStar';
 import SvgVEri from './components/svgs/verificados/SvgVEri';
+import ScrollTop from './components/ScrollTop';
+import Chat from './components/svgs/Chat';
 
 function App() {
 
@@ -46,17 +47,24 @@ function App() {
                 <span className={style.Logo_text}>CDCODE</span>
               </div>
             <nav className={style.menuLinks}>
-              <ListaDeLinks/>
-              <button>
-                <Link   
+                <ListaDeLinks className={active ? `${style.listNavbar} ${style.active}` : style.listNavbar}/>
+                <Link
+                className={style.compraLink}  
                 to={"# "}
                 smooth={true} 
                 duration={800}
                 >Garanta já
                 </Link>
-              </button>
+                
+              <BtnNavbar active={active} onClick={activeMode}/> 
             </nav>
-            <BtnNavbar active={active} onClick={activeMode}/>  
+            <nav className={active ? `${style.navegacaoMenu} ${style.active} ${style.menu}` : style.navegacaoMenu}>
+              <BtnNavbar active={active} onClick={activeMode} />
+              <ListaDeLinks 
+              className={active ? `${style.listNavbar} ${style.active}` : style.listNavbar}
+              reactive={activeMode}
+              />
+            </nav>
           </div>
       </header>
       <main>
@@ -156,9 +164,7 @@ function App() {
         </section>
       </main>
       <footer>
-        <button className={style.BtnTop}>
-          <img src={topBtn} />
-        </button>
+        <ScrollTop/>
         <div className={style.display}>
           <div className={style.footer_links}>
             <div className={style.logoFooter}>
@@ -167,7 +173,8 @@ function App() {
             </div>
             <ListaDeLinks/>
             <div className={style.LinkTextZap}>
-              <span>Fale conosco</span>
+              <Chat/>
+              <Link to="#"> Fale conosco</Link>
             </div>
           </div>
           <div className={style.termos}>
