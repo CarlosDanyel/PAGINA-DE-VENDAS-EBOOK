@@ -171,7 +171,7 @@ function App() {
                 <LogoIcon />
                 <span className={style.Logo_footer}>CDCODE</span>
             </div>
-            <ListaDeLinks/>
+            <ListaDeLinks className={active ? `${style.listNavbar} ${style.active}` : style.listNavbar}/>
             <div className={style.LinkTextZap}>
               <Chat/>
               <Link to="#"> Fale conosco</Link>
